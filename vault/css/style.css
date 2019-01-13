@@ -1,0 +1,63 @@
+body {
+    background-color: lightgray;
+}
+
+#main-container {
+    width: 500px;
+    background-color: gray;
+    margin: 0 auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+#correctcodelight {
+    height: 50px;
+    width: 50px;
+    background-color: green;
+    float: right;
+
+}
+
+#wrongcodelight {
+    height: 50px;
+    width: 50px;
+    background-color: red;
+    float: right;
+    display: block;
+    margin-left: 500px;
+}
+
+#code-container {
+    height: 300px;
+    width: 400px;
+    background-color: darkolivegreen;
+    margin: 0 auto; 
+}
+
+#button-container {
+    width: 360px;
+    height: 125px;
+    margin: 0 auto;
+    margin-top: 20px;
+    background-color: darkgray;
+    padding-left: 40px;
+    padding-top: 25px;
+}
+
+button {
+    height: 100px;
+    width: 100px;
+    font-size: 72px;
+    margin-left: 2px;
+    border-radius: 50%;
+    background-color: red;
+    color: #fff;
+    border: red solid 5px;;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    transition-duration: 0.4s;
+}
+
+button:hover {
+    background-color: #fff;
+    color: black;
+}
