@@ -9,6 +9,8 @@ var intervalTimer = 0;
 var codeButtons = document.getElementsByClassName("codebuttons");
 var correctSound = new Audio("sounds/correct.mp3");
 var wrongSound = new Audio("sounds/wrong.mp3");
+var correctCounter = 0;
+var wrongCounter = 0;
 
 
 function getNumber(clickedButton) 
@@ -39,6 +41,8 @@ function getNumber(clickedButton)
         if(numberOne == 3 && numberTwo == 2 && numberThree == 2)
         {
             outputcode.innerHTML = "Correct code";
+            correctCounter++;
+            correctcounter.innerHTML = "Correct: " + correctCounter;
             correctSound.play();
             var correctBlink = setInterval(function() 
             {
@@ -74,6 +78,8 @@ function getNumber(clickedButton)
         else
         {
             outputcode.innerHTML = "Wrong code";
+            wrongCounter++;
+            wrongcounter.innerHTML = "Incorrect: " + wrongCounter;
             wrongSound.play();
             var wrongBlink = setInterval(function() 
             {
