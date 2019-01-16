@@ -7,6 +7,9 @@ var correctCodeBlock = document.getElementById("correctcodelight");
 var wrongCodeBlock = document.getElementById("wrongcodelight");
 var intervalTimer = 0;
 var codeButtons = document.getElementsByClassName("codebuttons");
+var correctSound = new Audio("sounds/correct.mp3");
+var wrongSound = new Audio("sounds/wrong.mp3");
+
 
 function getNumber(clickedButton) 
 {
@@ -36,6 +39,7 @@ function getNumber(clickedButton)
         if(numberOne == 3 && numberTwo == 2 && numberThree == 2)
         {
             outputcode.innerHTML = "Correct code";
+            correctSound.play();
             var correctBlink = setInterval(function() 
             {
                 intervalTimer++;
@@ -62,13 +66,15 @@ function getNumber(clickedButton)
                     numberOne = "";
                     numberTwo = "";
                     numberThree = "";  
-                    intervalTimer = 0;    
+                    intervalTimer = 0;
+                    //correctSound.stop();   
                 }
             }, 500);
         }
         else
         {
             outputcode.innerHTML = "Wrong code";
+            wrongSound.play();
             var wrongBlink = setInterval(function() 
             {
                 intervalTimer++;
@@ -89,13 +95,15 @@ function getNumber(clickedButton)
                     {
                         codeButtons[i].removeAttribute('disabled');
                     }
+
                     outputcode.innerHTML = "";
                     codeContainer.innerHTML = "";
                     clickCounter = "";
                     numberOne = "";
                     numberTwo = "";
                     numberThree = ""; 
-                    intervalTimer = 0;    
+                    intervalTimer = 0;
+                    //wrongSound.stop(); 
                 }
             }, 500);
         }
