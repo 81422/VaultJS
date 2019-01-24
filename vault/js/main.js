@@ -1,3 +1,5 @@
+//Javascript for the vault
+//Variables
 var codeContainer = document.getElementById("code-container");
 var clickCounter = 0;
 var numberOne;
@@ -12,7 +14,7 @@ var wrongSound = new Audio("sounds/wrong.mp3");
 var correctCounter = 0;
 var wrongCounter = 0;
 
-
+//function that reads which button was pressed
 function getNumber(clickedButton) 
 {
     clickCounter++;
@@ -33,6 +35,7 @@ function getNumber(clickedButton)
 
     if(clickCounter == 3)
     {
+        //for loop to disable all buttons
         for(i=0; i < codeButtons.length; i++) 
         {
             codeButtons[i].setAttribute('disabled', 'disabled');
@@ -42,8 +45,14 @@ function getNumber(clickedButton)
         {
             outputcode.innerHTML = "Correct code";
             correctCounter++;
+
+            //shows the amount of times the correct code has been given
             correctcounter.innerHTML = "Correct: " + correctCounter;
+
+            //plays the correct sound
             correctSound.play();
+
+            //blinking effect
             var correctBlink = setInterval(function() 
             {
                 intervalTimer++;
@@ -60,6 +69,8 @@ function getNumber(clickedButton)
                 if(intervalTimer == 10)
                 {
                     clearInterval(correctBlink);
+
+                    //enables all buttons
                     for(i=0; i < codeButtons.length; i++) 
                     {
                         codeButtons[i].removeAttribute('disabled');
@@ -71,7 +82,6 @@ function getNumber(clickedButton)
                     numberTwo = "";
                     numberThree = "";  
                     intervalTimer = 0;
-                    //correctSound.stop();   
                 }
             }, 500);
         }
@@ -101,7 +111,6 @@ function getNumber(clickedButton)
                     {
                         codeButtons[i].removeAttribute('disabled');
                     }
-
                     outputcode.innerHTML = "";
                     codeContainer.innerHTML = "";
                     clickCounter = "";
@@ -109,7 +118,6 @@ function getNumber(clickedButton)
                     numberTwo = "";
                     numberThree = ""; 
                     intervalTimer = 0;
-                    //wrongSound.stop(); 
                 }
             }, 500);
         }
